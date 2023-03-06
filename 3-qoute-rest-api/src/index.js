@@ -1,15 +1,11 @@
 const express = require("express")
 const app = express()
-
-
+const quotes = require("./data/quotes.json")
 app.use(express.static('public'))
 
-app.get('/hello', (req, res) => {
-    res.send("Hej på Dig!")
-})
-
 app.get("/api/quote", (req, res) => {
-
+    const randomItem = quotes[Math.floor(Math.random() * quotes.length)]
+    res.json(randomItem)
 })
 
 app.listen(3000, () => {
