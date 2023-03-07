@@ -1,4 +1,4 @@
-const diceImg = document.querySelector("#dice-div")
+const diceDiv = document.querySelector("#dice-div")
 
 function throwDice() {
       const diceSides = [

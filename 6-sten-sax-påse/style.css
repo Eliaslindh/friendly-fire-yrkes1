@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.choiceBtn {
+    line-height: 30px;
+    width: 150px;
+}
+
+#gameDiv {
+
+    border: 3px solid;
+    border-radius: 25px;
+    padding: 10px;
+
+    text-align: center;
+}
