@@ -1,15 +1,78 @@
 * {
     box-sizing: border-box;
     padding: 0;
-    margin: 0;
+
 }
 
 body {
+
+    min-height: 100vh;
+    margin: 2rem;
+
+}
+
+.sortByName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 5px;
+}
+
+button {
+    width: 120px;
+
+    border: 2px solid black;
+    border-radius: 20px;
+    height: 25px;
+    color: black;
+    margin: 0.5rem;
+}
+
+input {
+
+    border: 1px solid black;
+    width: 150px;
+    color: black;
+}
+
+.wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 2rem;
-    background-color: rgb(26, 24, 24);
+    max-height: 320px;
+    border: 1px solid black;
+}
+
+
+#pokemon {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 69px;
+}
+
+
+
+.div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+
+}
+
+
+.pokemon {
+    width: 200px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
