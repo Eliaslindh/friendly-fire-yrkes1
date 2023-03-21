@@ -1,29 +1,28 @@
 fetchPokemon()
+
+document.querySelector('#search').addEventListener('click', () => {
+  fetchPokemon()
+})
+
 async function fetchPokemon() {
-  const res = await fetch('/api/pokemon');
-  let pokemon = await res.json();
-  displayPokemon(pokemon);
-}
+  let input = document.querySelector('#name').value
+  const res = await fetch(`/api/pokemon?name=${input}`);
+  let data = await res.json();
 
-document.querySelector('#sort-by-name').addEventListener('click', () => {
-  const sortNameInput = document.querySelector('#name');
-  const sortName = sortNameInput.value.toLowerCase();
-
-  const sortedPokemon = pokemon.sort((a, b) => {
-    const nameA = a.name.toLowerCase();
-    const nameB = b.name.toLowerCase();
-    if (nameA < nameB) return -1;
-    if (nameA > nameB) return 1;
-    return 0;
+  document.querySelector('#experience').addEventListener('click', () => {
+    let minWeight = document.querySelector('#min-weight').value
+    let maxWeight = document.querySelector('#max-weight').value
+    console.log(minWeight);
+    console.log(maxWeight);
+    let data2 = data.filter(
+      pokemon => pokemon.weight >= minWeight && pokemon.weight <= maxWeight
+    )
+    displayPokemon(data2)
   });
 
-  displayPokemon(sortedPokemon);
-});
-
-
-
-function displayPokemon(pokemons) {
-  document.querySelector('#pokemon').innerHTML = `
+  displayPokemon(data)
+  function displayPokemon(pokemons) {
+    document.querySelector('#pokemon').innerHTML = `
           ${pokemons.map(pokemon => `
           <div class="wrapper"
           <div class="div">
@@ -31,6 +30,11 @@ function displayPokemon(pokemons) {
            <img class="pokemon" src="https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg">
           </div>`).join('')}
           </div>`;
+  }
 }
+
+
+
+
 
 
