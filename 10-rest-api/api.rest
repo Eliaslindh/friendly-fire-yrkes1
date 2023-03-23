@@ -1,0 +1,22 @@
+POST http://localhost:3000/api/cars HTTP/1.1
+content-type: application/json
+
+{
+    "brand": "BMW",
+    "model": "M3 Sport",
+    "year": 2018
+}
+
+###
+POST http://localhost:3000/api/cars HTTP/1.1
+###
+PUT http://localhost:3000/api/cars/1 HTTP/1.1
+content-type: application/json
+
+{
+    "brand": "AUDI",
+    "model": "R8"
+}
+###
+DELETE http://localhost:3000/api/cars/2 HTTP/1.1
+content-type: application/json
