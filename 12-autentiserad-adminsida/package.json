@@ -1,0 +1,17 @@
+{
+  "name": "12-autentiserad-adminsida",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "expres": "^0.0.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.2.0"
+  }
+}
